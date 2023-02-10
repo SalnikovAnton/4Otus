@@ -81,8 +81,63 @@ fi
 ```
 [root@lvm ~]# mkdir /usr/lib/dracut/modules.d/01test
 ```
+В нее поместим два скрипта: module_setup.sh - который устанавливает модуль и вызывает скрипт test.sh
+```
+[root@lvm ~]# cat /usr/lib/dracut/modules.d/01test/module_setup.sh 
+#!/bin/bash
 
+check() {
+    return 0
+}
 
+depends() {
+    return 0
+}
+
+install() {
+    inst_hook cleanup 00 "${moddir}/test.sh"
+}
+```
+сам вызываемый скрипт
+```
+[root@lvm ~]# cat /usr/lib/dracut/modules.d/01test/test.sh 
+#!/bin/bash
+
+exec 0<>/dev/console 1<>/dev/console 2<>/dev/console
+cat <<'msgend'
+
+Hello! You are in dracut module!
+ ___________________
+< I'm dracut module >
+ -------------------
+   \
+    \
+        .--.
+       |o_o |
+       |:_/ |
+      //   \ \
+     (|     | )
+    /'\_   _/`\
+    \___)=(___/
+msgend
+sleep 10
+echo " continuing...."
+```
+Пересобираем образ initrd
+```
+[root@lvm ~]# mkinitrd -f -v /boot/initramfs-$(uname -r).img $(uname -r)
+...
+*** Creating image file done ***
+*** Creating initramfs image file '/boot/initramfs-3.10.0-862.2.3.el7.x86_64.img' done ***
+```
+или
+```
+[root@lvm ~]# dracut -f -v
+```
+Можно проверить/посмотреть какие модули загружены в образ
+```
+[root@lvm ~]# lsinitrd -m /boot/initramfs-$(uname -r).img | grep test
+```
 
 
 
