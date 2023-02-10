@@ -137,7 +137,10 @@ echo " continuing...."
 Можно проверить/посмотреть какие модули загружены в образ
 ```
 [root@lvm ~]# lsinitrd -m /boot/initramfs-$(uname -r).img | grep test
+test
 ```
+Перезагружаемся и выключаем опции rghb и quiet и смотрим вывод
+![Image alt](https://github.com/SalnikovAnton/RPM/blob/main/repo.png)
 
 
 
