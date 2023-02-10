@@ -1,4 +1,4 @@
-# Размещаем свой RPM в своем репозитории
+# Загрузка Linux
 1) Попасть в систему без пароля несколькими способами
 2) Установить систему с LVM, после чего переименовать VG
 3) Добавить модуль в initrd
@@ -26,4 +26,40 @@ gcc
 ```
 [root@lvm ~]# vgrename VolGroup00 OtusRoot
   Volume group "VolGroup00" successfully renamed to "OtusRoot"
+```
+Далее правим
+```
+[root@lvm ~]# vim /etc/fstab
+___________
+#
+# /etc/fstab
+# Created by anaconda on Sat May 12 18:50:26 2018
+#
+# Accessible filesystems, by reference, are maintained under '/dev/disk'
+# See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info
+#
+/dev/mapper/OtusRoot-LogVol00 /                       xfs     defaults        0 0
+UUID=570897ca-e759-4c81-90cf-389da6eee4cc /boot                   xfs     defaults        0 0
+/dev/mapper/OtusRoot-LogVol01 swap                    swap    defaults        0 0
+___________
+
+[root@lvm ~]# vim /etc/default/grub 
+___________
+GRUB_TIMEOUT=1
+GRUB_DISTRIBUTOR="$(sed 's, release .*$,,g' /etc/system-release)"
+GRUB_DEFAULT=saved
+GRUB_DISABLE_SUBMENU=true
+GRUB_TERMINAL_OUTPUT="console"
+GRUB_CMDLINE_LINUX="no_timer_check console=tty0 console=ttyS0,115200n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=auto rd.lvm.lv=OtusRoot/LogVol00 rd.lvm.lv=OtusRoot/LogVol01 rhgb quiet"
+GRUB_DISABLE_RECOVERY="true"
+___________
+
+[root@lvm ~]# vim /boot/grub2/grub.cfg 
+___________
+...
+fi
+        linux16 /vmlinuz-3.10.0-862.2.3.el7.x86_64 root=/dev/mapper/OtusRoot-LogVol00 ro no_timer_check console=tty0 console=ttyS0,115200n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=auto rd.lvm.lv=OtusRoot/LogVol00 rd.lvm.lv=OtusRoot/LogVol01 rhgb quiet 
+        initrd16 /initramfs-3.10.0-862.2.3.el7.x86_64.img
+...
+
 ```
