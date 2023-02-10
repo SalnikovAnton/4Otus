@@ -140,18 +140,4 @@ echo " continuing...."
 test
 ```
 Перезагружаемся и выключаем опции rghb и quiet и смотрим вывод
-![Image alt](https://github.com/SalnikovAnton/RPM/blob/main/repo.png)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+![Image alt](https://github.com/SalnikovAnton/8Otus/blob/main/pingvin.png)
