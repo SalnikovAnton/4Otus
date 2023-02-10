@@ -81,9 +81,9 @@ fi
 ```
 [root@lvm ~]# mkdir /usr/lib/dracut/modules.d/01test
 ```
-В нее поместим два скрипта: module_setup.sh - который устанавливает модуль и вызывает скрипт test.sh
+В нее поместим два скрипта: module-setup.sh - который устанавливает модуль и вызывает скрипт test.sh
 ```
-[root@lvm ~]# cat /usr/lib/dracut/modules.d/01test/module_setup.sh 
+[root@lvm ~]# cat /usr/lib/dracut/modules.d/01test/module-setup.sh 
 #!/bin/bash
 
 check() {
