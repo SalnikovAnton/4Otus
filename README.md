@@ -63,3 +63,37 @@ fi
 ...
 
 ```
+Пересоздаем initrd image, чтобы он знал новое название Volume Group
+```
+[root@lvm ~]# mkinitrd -f -v /boot/initramfs-$(uname -r).img $(uname -r)
+...
+*** Creating image file ***
+*** Creating image file done ***
+*** Creating initramfs image file '/boot/initramfs-3.10.0-862.2.3.el7.x86_64.img' done ***
+```
+Перезагружаемся и проверяем имя Volume Group
+```
+[root@lvm ~]# vgs
+  VG       #PV #LV #SN Attr   VSize   VFree  
+  OtusRoot   1   3   0 wz--n- <38.97g <27.47g
+```
+#### 3 Скрипты модулей хранятся в каталоге /usr/lib/dracut/modules.d/. Для того чтобы добавить свой модуль создаем там папку с именем 01test:
+```
+[root@lvm ~]# mkdir /usr/lib/dracut/modules.d/01test
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
