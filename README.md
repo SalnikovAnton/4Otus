@@ -6,23 +6,23 @@
 #### 1 запускаем виртуальную машину и в окне выбора ядра для загрузки нажимаем Е
 Переходим на строчку начинающуюся с linux и добавляем init=/bin/sh и нажимаем сtrl-x для загрузки в систему
 
-![Image alt](https://github.com/SalnikovAnton/8Otus/blob/main/1.png)
+![Image alt](https://github.com/SalnikovAnton/8Otus/blob/main/1.jpg)
 
 используем команду для переформатирования файловой системы в режим Read-Write
 
-![Image alt](https://github.com/SalnikovAnton/8Otus/blob/main/4.png)
+![Image alt](https://github.com/SalnikovAnton/8Otus/blob/main/4.jpg)
 
 rd.break. Переходим на строчку начинающуюся с linux и добавляем rd.break и нажимаем сtrl-x для загрузки в систему и попадаем в emergency mode
 
-![Image alt](https://github.com/SalnikovAnton/8Otus/blob/main/7.png)
+![Image alt](https://github.com/SalnikovAnton/8Otus/blob/main/7.JPG)
 
 Наша корневаā файловая система смонтирована опять же в режиме Read-Only, но мы не в ней. Далее вводим команды чтобы попасть в нее и поменять пароль администратора:
 
-![Image alt](https://github.com/SalnikovAnton/8Otus/blob/main/8.png)
+![Image alt](https://github.com/SalnikovAnton/8Otus/blob/main/8.JPG)
 
 rw init=/sysroot/bin/sh. Переходим на строчку начинающуюся с linux16 и заменяем ro на rw init=/sysroot/bin/sh и нажимаем сtrl-x для загрузки в систему, но файловая система сразу смонтирована в режим Read-Write.
 
-![Image alt](https://github.com/SalnikovAnton/8Otus/blob/main/5.png)
+![Image alt](https://github.com/SalnikovAnton/8Otus/blob/main/5.JPG)
 
 #### 2 текущее состояние системы:
 ```
