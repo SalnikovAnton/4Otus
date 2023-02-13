@@ -23,6 +23,7 @@ rd.break. Переходим на строчку начинающуюся с lin
 rw init=/sysroot/bin/sh. Переходим на строчку начинающуюся с linux16 и заменяем ro на rw init=/sysroot/bin/sh и нажимаем сtrl-x для загрузки в систему, но файловая система сразу смонтирована в режим Read-Write.
 
 ![Image alt](https://github.com/SalnikovAnton/8Otus/blob/main/5.JPG)
+![Image alt](https://github.com/SalnikovAnton/8Otus/blob/main/6.JPG)
 
 #### 2 текущее состояние системы:
 ```
