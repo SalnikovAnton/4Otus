@@ -16,11 +16,11 @@ rd.break. Переходим на строчку начинающуюся с lin
 
 ![Image alt](https://github.com/SalnikovAnton/8Otus/blob/main/7.JPG)
 
-Наша корневаā файловая система смонтирована опять же в режиме Read-Only, но мы не в ней. Далее вводим команды чтобы попасть в нее и поменять пароль администратора:
+Наша корневая файловая система смонтирована опять же в режиме Read-Only, но мы не в ней. Далее вводим команды чтобы попасть в нее и поменять пароль администратора:
 
 ![Image alt](https://github.com/SalnikovAnton/8Otus/blob/main/8.JPG)
 
-rw init=/sysroot/bin/sh. Переходим на строчку начинающуюся с linux16 и заменяем ro на rw init=/sysroot/bin/sh и нажимаем сtrl-x для загрузки в систему, но файловая система сразу смонтирована в режим Read-Write.
+rw init=/sysroot/bin/sh. Переходим на строчку начинающуюся с linux и заменяем ro на rw init=/sysroot/bin/sh и нажимаем сtrl-x для загрузки в систему, но файловая система сразу смонтирована в режим Read-Write.
 
 ![Image alt](https://github.com/SalnikovAnton/8Otus/blob/main/5.JPG)
 ![Image alt](https://github.com/SalnikovAnton/8Otus/blob/main/6.JPG)
