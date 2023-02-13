@@ -4,27 +4,25 @@
 3) Добавить модуль в initrd
 
 #### 1 запускаем виртуальную машину и в окне выбора ядра для загрузки нажимаем Е
-![Image alt](https://github.com/SalnikovAnton/8Otus/blob/main/pingvin.png)
+Переходим на строчку начинающуюся с linux и добавляем init=/bin/sh и нажимаем сtrl-x для загрузки в систему
 
-Переходим на строчку начинающуюся с linux16 и добавляем init=/bin/sh и нажимаем сtrl-x для загрузки в систему
-
-![Image alt](https://github.com/SalnikovAnton/8Otus/blob/main/pingvin.png)
+![Image alt](https://github.com/SalnikovAnton/8Otus/blob/main/1.png)
 
 используем команду для переформатирования файловой системы в режим Read-Write
 
-![Image alt](https://github.com/SalnikovAnton/8Otus/blob/main/pingvin.png)
+![Image alt](https://github.com/SalnikovAnton/8Otus/blob/main/4.png)
 
-rd.break. Переходим на строчку начинающуюся с linux16 и добавляем rd.break и нажимаем сtrl-x для загрузки в систему и попадаем в emergency mode
+rd.break. Переходим на строчку начинающуюся с linux и добавляем rd.break и нажимаем сtrl-x для загрузки в систему и попадаем в emergency mode
 
-![Image alt](https://github.com/SalnikovAnton/8Otus/blob/main/pingvin.png)
+![Image alt](https://github.com/SalnikovAnton/8Otus/blob/main/7.png)
 
 Наша корневаā файловая система смонтирована опять же в режиме Read-Only, но мы не в ней. Далее вводим команды чтобы попасть в нее и поменять пароль администратора:
 
-![Image alt](https://github.com/SalnikovAnton/8Otus/blob/main/pingvin.png)
+![Image alt](https://github.com/SalnikovAnton/8Otus/blob/main/8.png)
 
 rw init=/sysroot/bin/sh. Переходим на строчку начинающуюся с linux16 и заменяем ro на rw init=/sysroot/bin/sh и нажимаем сtrl-x для загрузки в систему, но файловая система сразу смонтирована в режим Read-Write.
 
-![Image alt](https://github.com/SalnikovAnton/8Otus/blob/main/pingvin.png)
+![Image alt](https://github.com/SalnikovAnton/8Otus/blob/main/5.png)
 
 #### 2 текущее состояние системы:
 ```
