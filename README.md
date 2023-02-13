@@ -7,6 +7,7 @@
 Переходим на строчку начинающуюся с linux и добавляем init=/bin/sh и нажимаем сtrl-x для загрузки в систему
 
 ![Image alt](https://github.com/SalnikovAnton/8Otus/blob/main/1.jpg)
+![Image alt](https://github.com/SalnikovAnton/8Otus/blob/main/3.jpg)
 
 используем команду для переформатирования файловой системы в режим Read-Write
 
